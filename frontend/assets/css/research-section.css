@@ -1,0 +1,506 @@
+/* ============================================
+   RESEARCH SECTION - ACADEMIC & ACHIEVEMENTS
+   ============================================ */
+
+/* Research Header */
+.research-heading {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.research-subtitle {
+    font-size: 16px;
+    color: var(--text-black-700);
+    margin-top: 10px;
+}
+
+/* Research Categories */
+.research-category {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.category-title i {
+    color: var(--skin-color);
+    font-size: 26px;
+}
+
+/* Academic Projects Grid */
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.research-card {
+    background: var(--bg-black-100);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--bg-black-50);
+    transition: all 0.3s ease;
+}
+
+.research-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    border-color: var(--skin-color);
+}
+
+.research-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.research-header h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin: 0;
+    flex: 1;
+}
+
+.research-year {
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.research-description {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-black-700);
+    margin-bottom: 20px;
+}
+
+.research-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.research-tags span {
+    font-size: 12px;
+    color: var(--skin-color);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+/* Achievements Grid */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.achievement-card {
+    background: var(--bg-black-100);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--bg-black-50);
+    display: flex;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    border-color: var(--skin-color);
+}
+
+.achievement-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.achievement-content {
+    flex: 1;
+}
+
+.achievement-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin: 0 0 8px 0;
+}
+
+.achievement-content > p {
+    font-size: 14px;
+    color: var(--text-black-700);
+    margin-bottom: 15px;
+}
+
+.achievement-stats {
+    display: flex;
+    gap: 20px;
+}
+
+.achievement-stats .stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--skin-color);
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-black-700);
+}
+
+/* GitHub Section */
+.github-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.github-stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.github-stat-card {
+    background: var(--bg-black-100);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--bg-black-50);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.github-stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    border-color: var(--skin-color);
+}
+
+.github-stat-card .stat-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+}
+
+.github-stat-card .stat-info h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-black-900);
+    margin: 0 0 8px 0;
+}
+
+.github-stat-card .stat-number {
+    font-size: 28px;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0 0 5px 0;
+}
+
+.github-stat-card .stat-info span {
+    font-size: 13px;
+    color: var(--text-black-700);
+}
+
+/* Featured Repos */
+.featured-repos h4 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 25px;
+}
+
+.repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.repo-card {
+    background: var(--bg-black-100);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid var(--bg-black-50);
+    transition: all 0.3s ease;
+}
+
+.repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    border-color: var(--skin-color);
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.repo-header h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.repo-header h5 i {
+    color: var(--skin-color);
+}
+
+.repo-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.repo-stats span {
+    font-size: 13px;
+    color: var(--text-black-700);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.repo-stats i {
+    color: var(--skin-color);
+}
+
+.repo-card > p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-black-700);
+    margin-bottom: 15px;
+}
+
+.repo-tech {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+.repo-tech span {
+    font-size: 12px;
+    color: var(--skin-color);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+.repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--skin-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.repo-link:hover {
+    gap: 12px;
+}
+
+/* Skills Showcase */
+.skills-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.skill-category h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 20px;
+}
+
+.skill-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill-info span:first-child {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-black-900);
+}
+
+.skill-info span:last-child {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--skin-color);
+}
+
+.skill-progress {
+    height: 10px;
+    background: var(--bg-black-50);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--skin-color), var(--accent-color));
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.research-card,
+.achievement-card,
+.github-stat-card,
+.repo-card {
+    animation: fadeInUp 0.6s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+    .research-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-showcase {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 991px) {
+    .category-title {
+        font-size: 22px;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .repos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .research-card,
+    .achievement-card,
+    .github-stat-card {
+        padding: 25px;
+    }
+    
+    .research-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .achievement-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .achievement-icon {
+        margin: 0 auto;
+    }
+    
+    .achievement-stats {
+        justify-content: center;
+    }
+    
+    .github-stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .github-stat-card .stat-icon {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-title {
+        font-size: 20px;
+    }
+    
+    .research-header h4 {
+        font-size: 16px;
+    }
+    
+    .achievement-content h4 {
+        font-size: 16px;
+    }
+    
+    .repo-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

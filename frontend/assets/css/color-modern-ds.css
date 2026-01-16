@@ -1,0 +1,232 @@
+/* ============================================
+   MODERN DATA SCIENCE COLOR SCHEME
+   Tech-inspired with deep blues, teals, and purples
+   ============================================ */
+
+:root {
+    /* Primary Data Science Colors */
+    --skin-color: #00d4ff; /* Bright cyan - data/tech feel */
+    --accent-color: #7c3aed; /* Deep purple - ML/AI feel */
+    --secondary-accent: #10b981; /* Emerald green - success/growth */
+    
+    /* Background Colors - Dark theme for tech feel */
+    --bg-black-900: #0a0e27; /* Deep navy - main background */
+    --bg-black-100: #151b3d; /* Slightly lighter navy - cards */
+    --bg-black-50: #1e2749; /* Border color */
+    
+    /* Text Colors */
+    --text-black-900: #e2e8f0; /* Light gray - primary text */
+    --text-black-700: #94a3b8; /* Medium gray - secondary text */
+    
+    /* Gradient Overlays */
+    --gradient-primary: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+    --gradient-secondary: linear-gradient(135deg, #7c3aed 0%, #ec4899 100%);
+    --gradient-success: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    
+    /* Glow Effects for Tech Feel */
+    --glow-cyan: 0 0 20px rgba(0, 212, 255, 0.3);
+    --glow-purple: 0 0 20px rgba(124, 58, 237, 0.3);
+    --glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+    
+    /* Shadow - Deeper for contrast */
+    --shadow-black-100: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --shadow-black-300: 0 20px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* Body Background - Tech Grid Pattern */
+body {
+    background-color: var(--bg-black-900);
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+/* Sidebar Styling */
+.aside {
+    background: linear-gradient(180deg, #0a0e27 0%, #151b3d 100%);
+    border-right: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.aside .logo a {
+    color: var(--skin-color);
+    text-shadow: var(--glow-cyan);
+}
+
+.aside .logo a span {
+    color: var(--accent-color);
+}
+
+.aside .nav li a {
+    color: var(--text-black-700);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.05);
+}
+
+.aside .nav li a:hover,
+.aside .nav li a.active {
+    color: var(--skin-color);
+    background: rgba(0, 212, 255, 0.05);
+    border-left: 3px solid var(--skin-color);
+    box-shadow: var(--glow-cyan);
+}
+
+/* Section Titles */
+.section-title h2 {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-title h2::before,
+.section-title h2::after {
+    background: var(--gradient-primary);
+}
+
+/* Buttons */
+.btn {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--glow-cyan);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+
+/* Cards */
+.shadow-dark {
+    background: var(--bg-black-100);
+    box-shadow: var(--shadow-black-100);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.shadow-dark:hover {
+    border-color: var(--skin-color);
+    box-shadow: var(--glow-cyan), var(--shadow-black-300);
+}
+
+/* Typing Animation */
+.typing {
+    color: var(--skin-color);
+    text-shadow: var(--glow-cyan);
+}
+
+/* Links */
+a {
+    color: var(--skin-color);
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+/* Form Inputs */
+.form-control {
+    background: var(--bg-black-100);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    color: var(--text-black-900);
+}
+
+.form-control:focus {
+    border-color: var(--skin-color);
+    box-shadow: var(--glow-cyan);
+}
+
+/* Navigation Toggler */
+.nav-toggler span {
+    background: var(--skin-color);
+    box-shadow: var(--glow-cyan);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--bg-black-900);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* Tech Accent Lines */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-primary);
+    opacity: 0.3;
+}
+
+/* Glassmorphism Effect for Cards */
+.shadow-dark {
+    backdrop-filter: blur(10px);
+    background: rgba(21, 27, 61, 0.7);
+}
+
+/* Animated Border Glow */
+@keyframes borderGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 40px rgba(124, 58, 237, 0.4);
+    }
+}
+
+.shadow-dark:hover {
+    animation: borderGlow 2s infinite;
+}
+
+/* Code Blocks - Terminal Style */
+.code-block {
+    background: #0a0e27;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    box-shadow: var(--glow-cyan);
+}
+
+.code-header {
+    background: rgba(0, 212, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+/* Tags and Badges */
+.tech-tag,
+.research-tags span,
+.repo-tech span {
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    color: var(--skin-color);
+}
+
+/* Progress Bars */
+.skill-fill {
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-cyan);
+}
+
+/* Icons */
+i {
+    color: var(--skin-color);
+}
+
+/* Selection */
+::selection {
+    background: var(--skin-color);
+    color: var(--bg-black-900);
+}
+
+::-moz-selection {
+    background: var(--skin-color);
+    color: var(--bg-black-900);
+}

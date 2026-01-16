@@ -1,0 +1,371 @@
+/* ============================================
+   ANALYTICS SECTION - INTERACTIVE VISUALIZATIONS
+   ============================================ */
+
+/* Analytics Header */
+.viz-heading {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.viz-subtitle {
+    font-size: 16px;
+    color: var(--text-black-700);
+    margin-top: 10px;
+}
+
+/* Dashboard Section */
+.dashboard-section,
+.pipeline-section,
+.workflow-section {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+
+.dashboard-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dashboard-title i {
+    color: var(--skin-color);
+    font-size: 26px;
+}
+
+/* Metrics Grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.metric-card {
+    background: var(--bg-black-100);
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid var(--bg-black-50);
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    border-color: var(--skin-color);
+}
+
+.card-header-viz {
+    padding: 20px;
+    border-bottom: 1px solid var(--bg-black-50);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header-viz h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-black-900);
+    margin: 0;
+}
+
+.chart-type {
+    font-size: 12px;
+    color: var(--text-black-700);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.chart-container {
+    padding: 20px;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart-container canvas {
+    max-height: 250px;
+}
+
+/* Pipeline Diagram */
+.pipeline-diagram {
+    background: var(--bg-black-100);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid var(--bg-black-50);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.pipeline-stage {
+    flex: 1;
+    min-width: 150px;
+    text-align: center;
+    padding: 25px 20px;
+    background: var(--bg-black-900);
+    border-radius: 15px;
+    border: 2px solid var(--bg-black-50);
+    transition: all 0.3s ease;
+}
+
+.pipeline-stage:hover {
+    border-color: var(--skin-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+}
+
+.stage-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    color: white;
+    font-size: 30px;
+}
+
+.pipeline-stage h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin: 0 0 8px 0;
+}
+
+.pipeline-stage > p {
+    font-size: 13px;
+    color: var(--text-black-700);
+    margin-bottom: 15px;
+}
+
+.stage-details {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 15px;
+}
+
+.stage-details span {
+    font-size: 12px;
+    color: var(--skin-color);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-weight: 500;
+}
+
+.pipeline-arrow {
+    color: var(--skin-color);
+    font-size: 28px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Workflow Steps */
+.workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.workflow-step {
+    background: var(--bg-black-100);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid var(--bg-black-50);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.workflow-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    border-color: var(--skin-color);
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.step-content h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-black-900);
+    margin: 0 0 12px 0;
+}
+
+.step-content p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-black-700);
+    margin-bottom: 15px;
+}
+
+.step-tools {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.step-tools span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-black-700);
+    background: var(--bg-black-900);
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid var(--bg-black-50);
+}
+
+.step-tools span i {
+    color: var(--skin-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric-card,
+.pipeline-stage,
+.workflow-step {
+    animation: fadeInUp 0.6s ease;
+}
+
+.metric-card:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.metric-card:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.metric-card:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 1199px) {
+    .metrics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 991px) {
+    .dashboard-title {
+        font-size: 22px;
+    }
+    
+    .pipeline-diagram {
+        padding: 30px;
+    }
+    
+    .pipeline-arrow {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 767px) {
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-title {
+        font-size: 20px;
+    }
+    
+    .pipeline-diagram {
+        padding: 20px;
+        flex-direction: column;
+    }
+    
+    .pipeline-stage {
+        width: 100%;
+    }
+    
+    .pipeline-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .stage-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+    }
+    
+    .workflow-step {
+        padding: 25px;
+    }
+    
+    .step-number {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-header-viz {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .chart-container {
+        padding: 15px;
+        min-height: 200px;
+    }
+    
+    .pipeline-stage h4 {
+        font-size: 16px;
+    }
+    
+    .step-content h4 {
+        font-size: 16px;
+    }
+}
