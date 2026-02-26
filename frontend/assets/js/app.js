@@ -6,113 +6,119 @@ var typed = new Typed(".typing", {
     loop:true
 })
 
-/* Hybrid Navigation - Section Switching with Smooth Scrolling */
+/* Navigation & Scroll Spy */
 const nav = document.querySelector(".nav"),
 navList = nav.querySelectorAll("li"),
-totalNavList = navList.length,
-allSection = document.querySelectorAll(".section"),
-totalSection = allSection.length;
+mainContent = document.querySelector(".main-content");
 
-for(let i = 0; i<totalNavList; i++){
-    const a = navList[i].querySelector("a");
+const navTogglerBtn = document.querySelector(".nav-toggler"),
+aside = document.querySelector(".aside");
+
+// Menu click → smooth scroll to section
+navList.forEach(li => {
+    const a = li.querySelector("a");
     a.addEventListener("click", function(e){
         e.preventDefault();
-        
-        // Update active nav state
-        for(let j = 0; j<totalNavList; j++){
-            navList[j].querySelector("a").classList.remove("active");
+        const targetId = this.getAttribute("href").replace("#", "");
+        const target = document.getElementById(targetId);
+        if(target){
+            mainContent.scrollTo({
+                top: target.offsetTop,
+                behavior: "smooth"
+            });
         }
-        this.classList.add("active");
-        
-        // Switch to target section with smooth transition
-        const targetId = this.getAttribute("href").split("#")[1];
-        switchToSection(targetId);
-
         if(window.innerWidth < 1200){
             asideSectionTogglerBtn();
         }
-    })
-}
+    });
+});
 
-function switchToSection(targetId) {
-    // Hide all sections
-    for(let i = 0; i < totalSection; i++){
-        allSection[i].classList.remove("active");
-        allSection[i].classList.remove("back-section");
-    }
-    
-    // Show target section
-    const targetSection = document.querySelector("#" + targetId);
-    if(targetSection) {
-        targetSection.classList.add("active");
-        
-        // Smooth scroll to top of section
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-    }
-}
-
-function removeBackSection(){
-    for(let i = 0; i<totalNavList; i++){
-        allSection[i].classList.remove("back-section");
-    }
-}
-
-function addBackSection(num){
-    allSection[num].classList.add("back-section");
-}
-
-function showSection(element){
-    const targetId = element.getAttribute("href").split("#")[1];
-    switchToSection(targetId);
-}
-
-function updateNav(element){
-    for(let i = 0; i< totalNavList; i++){
-        navList[i].querySelector("a").classList.remove("active");
-        const target = element.getAttribute("href").split("#")[1];
-        if(target === navList[i].querySelector("a").getAttribute("href").split("#")[1]){
-            navList[i].querySelector("a").classList.add("active");
-        }
-    }
-}
-
-// Handle hire-me button if it exists
-const hireMeBtn = document.querySelector(".hire-me");
-if(hireMeBtn) {
-    hireMeBtn.addEventListener("click", function(){
-        const sectionIndex = this.getAttribute("data-section-index");
-        showSection(this);
-        updateNav(this);
-        removeBackSection();
-        addBackSection(sectionIndex);
-    })
-}
-
-// Handle logo click
+// Logo click → scroll to top (home)
 document.querySelector(".logo a")?.addEventListener("click", function(e){
     e.preventDefault();
-    for(let i = 0; i<totalNavList; i++){
-        navList[i].querySelector("a").classList.remove("active");
-    }
-    navList[0].querySelector("a").classList.add("active");
-    showSection(this);
-})
+    mainContent.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Hire-me button if it exists
+const hireMeBtn = document.querySelector(".hire-me");
+if(hireMeBtn){
+    hireMeBtn.addEventListener("click", function(){
+        const targetId = this.getAttribute("href")?.replace("#","") || "contact";
+        const target = document.getElementById(targetId);
+        if(target){
+            mainContent.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+        }
+    });
+}
 
 // Mobile navigation toggle
-const navTogglerBtn = document.querySelector(".nav-toggler"),
-aside = document.querySelector(".aside");
 navTogglerBtn.addEventListener("click", () => {
-    asideSectionTogglerBtn()
-})
+    asideSectionTogglerBtn();
+});
 
 function asideSectionTogglerBtn(){
     aside.classList.toggle("open");
     navTogglerBtn.classList.toggle("open");
-
-    for(let i =0; i < totalSection; i++){
-        allSection[i].classList.toggle("open");
-    }
 }
+
+// Floating dot nav — click to scroll
+const dotNavItems = document.querySelectorAll(".dot-nav-item");
+dotNavItems.forEach(dot => {
+    dot.addEventListener("click", function(e){
+        e.preventDefault();
+        const targetId = this.getAttribute("href").replace("#","");
+        const target = document.getElementById(targetId);
+        if(target){
+            mainContent.scrollTo({ top: target.offsetTop, behavior: "smooth" });
+        }
+    });
+});
+
+// Scroll Spy — highlights sidebar nav + dot nav
+function updateActiveNavLink(sectionId){
+    navList.forEach(li => {
+        const a = li.querySelector("a");
+        a.classList.remove("active");
+        if(a.getAttribute("href") === `#${sectionId}`){
+            a.classList.add("active");
+        }
+    });
+    dotNavItems.forEach(dot => {
+        dot.classList.remove("active");
+        if(dot.getAttribute("data-section") === sectionId){
+            dot.classList.add("active");
+        }
+    });
+}
+
+mainContent.addEventListener("scroll", () => {
+    const sections = document.querySelectorAll(".section");
+    const scrollMid = mainContent.scrollTop + mainContent.clientHeight / 2;
+
+    sections.forEach(section => {
+        if(scrollMid >= section.offsetTop && scrollMid < section.offsetTop + section.offsetHeight){
+            updateActiveNavLink(section.getAttribute("id"));
+        }
+    });
+});
+
+// Scroll-triggered animations for sections and dividers
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("in-view");
+        } else {
+            entry.target.classList.remove("in-view");
+        }
+    });
+}, {
+    root: mainContent,
+    threshold: 0.1
+});
+
+document.querySelectorAll(".section, .section-divider").forEach(el => {
+    revealObserver.observe(el);
+});
+
+// Make home section visible immediately
+document.querySelector("#home")?.classList.add("in-view");

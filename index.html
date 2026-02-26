@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="/frontend/assets/css/case-studies-section.css">
 <link rel="stylesheet" href="/frontend/assets/css/research-section.css">
 <link rel="stylesheet" href="/frontend/assets/css/color-1.css">
+<link rel="stylesheet" href="/frontend/assets/css/ai-features.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
@@ -60,6 +61,16 @@
                 <div class="row hero-row">
                     <!-- Left Content -->
                     <div class="hero-content padd-15">
+                        <!-- AI Smart Greeting -->
+                        <div class="ai-greeting" id="ai-greeting">
+                            <div class="greeting-icon"><i class="fas fa-robot"></i></div>
+                            <div class="greeting-text">
+                                <div class="greeting-main"></div>
+                                <div class="greeting-sub"></div>
+                            </div>
+                            <span class="greeting-badge">AI Powered</span>
+                        </div>
+
                         <!-- Animated Badge -->
                         <div class="hero-badge-animated">
                             <span class="badge-dot"></span>
@@ -192,6 +203,7 @@
             </div>
         </section>
         <!--Home Section End-->
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-chevron-down"></i></span><div class="divider-line"></div><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span></div>
         <!--About Section Start-->
         <section class="about section" id="about">
             <div class="container">
@@ -449,7 +461,7 @@
             </div>
         </section>
         <!--About Section End-->
-        
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-chevron-down"></i></span><div class="divider-line"></div><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span></div>
         <!--Portfolio Section Start-->
         <section class="portfolio section" id="portfolio">
             <div class="container">
@@ -730,7 +742,33 @@
             </div>
         </section>
         <!--Portfolio Section End-->
-        
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-chevron-down"></i></span><div class="divider-line"></div><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span></div>
+
+        <!-- Interactive ML Demo -->
+        <div class="ml-demo-section">
+            <div class="ml-demo-container">
+                <div class="ml-demo-header">
+                    <div class="ml-demo-badge"><i class="fas fa-brain"></i> Live ML Model</div>
+                    <h2>Try My Sentiment Analyzer</h2>
+                    <p>Type any sentence and watch a real-time NLP model classify its sentiment. Built to demonstrate practical ML skills.</p>
+                </div>
+                <div class="sentiment-card">
+                    <div class="sentiment-examples">
+                        <span class="sentiment-example" onclick="document.getElementById('sentiment-input').value='This portfolio is absolutely amazing and impressive!';document.getElementById('sentiment-form').dispatchEvent(new Event('submit'))">✨ Try positive</span>
+                        <span class="sentiment-example" onclick="document.getElementById('sentiment-input').value='This is terrible and very disappointing work';document.getElementById('sentiment-form').dispatchEvent(new Event('submit'))">👎 Try negative</span>
+                        <span class="sentiment-example" onclick="document.getElementById('sentiment-input').value='The meeting is scheduled for tomorrow';document.getElementById('sentiment-form').dispatchEvent(new Event('submit'))">😐 Try neutral</span>
+                    </div>
+                    <form id="sentiment-form">
+                        <div class="sentiment-input-wrap">
+                            <input type="text" id="sentiment-input" placeholder="Type a sentence to analyze..." autocomplete="off">
+                            <button type="submit" class="sentiment-btn"><i class="fas fa-search"></i> Analyze</button>
+                        </div>
+                    </form>
+                    <div id="sentiment-result"></div>
+                </div>
+            </div>
+        </div>
+
         <!--Case Studies Section Start-->
         <section class="case-studies section" id="case-studies">
             <div class="container">
@@ -937,7 +975,7 @@ model = Sequential([
             </div>
         </section>
         <!--Case Studies Section End-->
-        
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-chevron-down"></i></span><div class="divider-line"></div><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span></div>
         <!--Research Section Start-->
         <section class="research section" id="research">
             <div class="container">
@@ -1219,7 +1257,7 @@ model = Sequential([
             </div>
         </section>
         <!--Research Section End-->
-        
+        <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-chevron-down"></i></span><div class="divider-line"></div><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span></div>
         <section class="contact section" id="contact">
             <div class="container">
                 <div class="row">
@@ -1308,6 +1346,7 @@ model = Sequential([
 
             </div>
         </section>
+        <!--Contact Section End-->
         <!--Start Section Start-->
         
         <!--Start Section End-->
@@ -1315,10 +1354,44 @@ model = Sequential([
         <!--Main Content End-->
     </div>
     <!--Main Container End-->
+    <!-- AI Chatbot Widget -->
+    <button id="chatbot-toggle" aria-label="Chat with AI Assistant">
+        <span class="toggle-icon-open"><i class="fas fa-robot"></i></span>
+        <span class="toggle-icon-close"><i class="fas fa-times"></i></span>
+    </button>
+    <div id="chatbot-panel">
+        <div class="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-avatar"><i class="fas fa-robot"></i></div>
+                <div class="chatbot-header-text">
+                    <h4>Gopolang's AI Assistant</h4>
+                    <span><span class="status-dot"></span>Online — Ask me anything</span>
+                </div>
+            </div>
+            <button id="chatbot-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <form id="chatbot-form" class="chatbot-input-area">
+            <input type="text" id="chatbot-input" placeholder="Ask about skills, projects, contact..." autocomplete="off">
+            <button type="submit" class="chatbot-send"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <!-- Floating Dot Nav -->
+    <nav class="dot-nav">
+        <a href="#home" class="dot-nav-item active" data-section="home"><span class="dot-label">Home</span></a>
+        <a href="#about" class="dot-nav-item" data-section="about"><span class="dot-label">About</span></a>
+        <a href="#portfolio" class="dot-nav-item" data-section="portfolio"><span class="dot-label">Portfolio</span></a>
+        <a href="#case-studies" class="dot-nav-item" data-section="case-studies"><span class="dot-label">Case Studies</span></a>
+        <a href="#research" class="dot-nav-item" data-section="research"><span class="dot-label">Research</span></a>
+        <a href="#contact" class="dot-nav-item" data-section="contact"><span class="dot-label">Contact</span></a>
+    </nav>
+
     <!--JS Files--> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="/frontend/assets/js/app.js?v=3"></script>
+    <script src="/frontend/assets/js/app.js?v=5"></script>
     <script src="/frontend/assets/js/hero-interactions.js"></script>
     <script src="/frontend/assets/js/portfolio-filter.js"></script>
     <script src="/frontend/assets/js/case-studies.js"></script>
     <script src="/frontend/assets/js/contact_form.js?v=6"></script>
+    <script src="/frontend/assets/js/ai-features.js"></script>
