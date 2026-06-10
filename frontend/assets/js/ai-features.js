@@ -207,7 +207,7 @@
           response: () => `<strong>Sentiment Analysis System</strong> — Real-time sentiment analysis using a fine-tuned BERT model. Processes 1000+ reviews/minute with <strong>92% accuracy</strong> for multi-class classification. You can actually try a live demo on this portfolio — scroll to the "Try My Sentiment Analyzer" section! Tech: Python, PyTorch, BERT.` },
 
         { patterns: ["dashboard","sales","power bi","bi","business intelligence","analytics dashboard"],
-          response: () => `<strong>Sales Analytics Dashboard</strong> — An interactive BI dashboard with real-time sales tracking, predictive analytics, and automated reporting. Used by 50+ users and increased decision-making speed by <strong>40%</strong>. Tech: Power BI, DAX, SQL.` },
+          response: () => `<strong>Sales Analytics Dashboard</strong> — An interactive BI dashboard with real-time sales tracking, predictive analytics, and automated reporting. Built for data-driven decision making. Tech: Power BI, DAX, SQL.` },
 
         { patterns: ["image classif","computer vision","cnn","image recognition","visual"],
           response: () => `<strong>Image Classification Model</strong> — Multi-class image classifier using CNN with transfer learning. Achieved <strong>92% accuracy</strong> on a 10-class dataset with data augmentation techniques. Tech: Python, Keras, OpenCV.` },
@@ -220,7 +220,7 @@
 
         // ── All Projects Overview ──
         { patterns: ["project","portfolio","all project","work","what have you built","what did you build","busy with","working on","current project"],
-          response: () => `${NAME} has <strong>50+ projects delivered</strong>. Here are the key ones:<br><br>🔹 <strong>Customer Churn Prediction</strong> — 85% accuracy, Random Forest (Python, Scikit-learn)<br>🔹 <strong>Fraud Detection System</strong> — 94% precision, LSTM + Isolation Forest (TensorFlow, Kafka)<br>🔹 <strong>Sentiment Analysis</strong> — 92% accuracy, fine-tuned BERT (PyTorch)<br>🔹 <strong>Sales Analytics Dashboard</strong> — Real-time BI (Power BI, DAX, SQL)<br>🔹 <strong>Image Classification</strong> — 92% accuracy, CNN (Keras, OpenCV)<br>🔹 <strong>Recommendation Engine</strong> — 35% engagement boost (Flask, Surprise)<br>🔹 <strong>Healthcare Thesis</strong> — Patient readmission prediction (2024)<br>🔹 <strong>Economic Trends Study</strong> — Time series analysis (R)<br><br>Ask me about any specific project for more details!` },
+          response: () => `${NAME} has <strong>a growing portfolio of projects</strong>. Here are the key ones:<br><br>🔹 <strong>Customer Churn Prediction</strong> — 85% accuracy, Random Forest (Python, Scikit-learn)<br>🔹 <strong>Fraud Detection System</strong> — 94% precision, LSTM + Isolation Forest (TensorFlow, Kafka)<br>🔹 <strong>Sentiment Analysis</strong> — 92% accuracy, fine-tuned BERT (PyTorch)<br>🔹 <strong>Sales Analytics Dashboard</strong> — Real-time BI (Power BI, DAX, SQL)<br>🔹 <strong>Image Classification</strong> — 92% accuracy, CNN (Keras, OpenCV)<br>🔹 <strong>Recommendation Engine</strong> — 35% engagement boost (Flask, Surprise)<br>🔹 <strong>Healthcare Thesis</strong> — Patient readmission prediction (2024)<br>🔹 <strong>Economic Trends Study</strong> — Time series analysis (R)<br><br>Ask me about any specific project for more details!` },
 
         // ── Skills & Tech ──
         { patterns: ["python","programming language","what language","coding language"],
@@ -243,7 +243,7 @@
           response: () => `${NAME}'s Data Engineering expertise (80% proficiency):<br>• ETL Pipeline Development<br>• Big Data Processing with Apache Spark<br>• Database Design & Optimization<br>• Cloud Data Architecture (AWS)<br>• Streaming data with Apache Kafka` },
 
         { patterns: ["data analysis","statistic","a/b test","visualization","hypothesis","dashboard"],
-          response: () => `${NAME}'s Data Analysis expertise (95% proficiency — his strongest area!):<br>• Statistical Analysis & Hypothesis Testing<br>• A/B Testing & Experimentation<br>• Advanced Data Visualization (Matplotlib, Power BI)<br>• Business Intelligence Dashboards<br><br>Key project: Sales Analytics Dashboard serving 50+ users with real-time tracking.` },
+          response: () => `${NAME}'s Data Analysis expertise (95% proficiency — his strongest area!):<br>• Statistical Analysis & Hypothesis Testing<br>• A/B Testing & Experimentation<br>• Advanced Data Visualization (Matplotlib, Power BI)<br>• Business Intelligence Dashboards<br><br>Key project: Sales Analytics Dashboard built with Power BI, DAX, and SQL.` },
 
         // ── Achievements & Research ──
         { patterns: ["kaggle","competition","hackathon","award","achievement","accomplish"],
@@ -269,7 +269,7 @@
 
         // ── Who / About ──
         { patterns: ["who","about you","yourself","introduce","tell me about","what do you do"],
-          response: () => `${NAME} is a <strong>Data Scientist & Machine Learning Engineer</strong> based in Johannesburg, South Africa. He holds a <strong>BSc in Mathematical Science</strong> (Maths & Computer Science, 2019–2024).<br><br>He specializes in building production-ready ML systems — from predictive analytics to deep learning — transforming complex data into scalable solutions. With 50+ projects delivered, 85% average model accuracy, and expertise across ML, DL, Data Engineering, and Analytics, he's ready for industry challenges.<br><br>Ask me about his projects, skills, education, or how to hire him!` },
+          response: () => `${NAME} is a <strong>Data Scientist & Machine Learning Engineer</strong> based in Johannesburg, South Africa. He holds a <strong>BSc in Mathematical Science</strong> (Maths & Computer Science, 2019–2024).<br><br>He specializes in building production-ready ML systems — from predictive analytics to deep learning — transforming complex data into scalable solutions. With a growing portfolio of projects, 85% average model accuracy, and expertise across ML, DL, Data Engineering, and Analytics, he's ready for industry challenges.<br><br>Ask me about his projects, skills, education, or how to hire him!` },
 
         // ── General greetings ──
         { patterns: ["hello","hi ","hey","greet","sup","what's up","howzit","good morning","good afternoon","good evening"],
@@ -378,3 +378,7 @@
         addMessage(`Hi! 👋 I'm Gopolang's AI assistant. Ask me anything about his skills, projects, or how to get in touch!`, "bot");
     }, 1000);
 })();
+
+
+
+
