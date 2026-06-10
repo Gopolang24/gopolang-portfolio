@@ -1,1 +1,20 @@
-/blog
+﻿# OS
+.DS_Store
+Thumbs.db
+*.log
+
+# Dev artifacts
+*.sql
+temp-*.txt
+temp-*.html
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Build
+node_modules/
+dist/
+.env
+.env.local
