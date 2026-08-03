@@ -874,195 +874,134 @@
                 </div>
                 
                 <div class="row">
-                    <!-- Case Study 1 -->
-                    <div class="case-study-item padd-15">
-                        <div class="case-study-card shadow-dark">
-                            <div class="case-header">
-                                <div class="case-title-section">
-                                    <h3>Customer Churn Prediction System</h3>
-                                    <span class="case-badge ml">Machine Learning</span>
-                                </div>
-                            </div>
-                            
-                            <div class="case-body">
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-exclamation-circle"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Problem Statement</h4>
-                                        <p>A telecom company was losing 15% of customers annually, costing $2M in revenue. They needed to identify at-risk customers before they churned.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-search"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Data Exploration</h4>
-                                        <ul class="case-list">
-                                            <li>Analyzed 10,000 customer records with 20+ features</li>
-                                            <li>Discovered 35% class imbalance in churn labels</li>
-                                            <li>Identified key patterns: low engagement, support tickets, tenure</li>
-                                            <li>Found missing data in 12% of records requiring imputation</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-cogs"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Model Selection & Implementation</h4>
-                                        <p>Tested 5 algorithms: Logistic Regression, Random Forest, XGBoost, Neural Networks, and SVM. Random Forest achieved best performance with 85% accuracy and 82% precision.</p>
-                                        <div class="code-block">
-                                            <div class="code-header">
-                                                <span class="code-lang">Python</span>
-                                                <button class="code-copy" title="Copy code"><i class="fa fa-copy"></i></button>
-                                            </div>
-                                            <pre><code># Feature Engineering
-df['engagement_score'] = (df['login_freq'] * df['feature_usage']) / df['tenure']
-df['service_risk'] = df['support_tickets'] / df['tenure_months']
-
-# Model Training
-from sklearn.ensemble import RandomForestClassifier
-model = RandomForestClassifier(n_estimators=100, max_depth=10)
-model.fit(X_train, y_train)</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-chart-bar"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Results & Impact</h4>
-                                        <div class="results-grid">
-                                            <div class="result-item">
-                                                <div class="result-value">85%</div>
-                                                <div class="result-label">Accuracy</div>
-                                            </div>
-                                            <div class="result-item">
-                                                <div class="result-value">$1.5M</div>
-                                                <div class="result-label">Saved Annually</div>
-                                            </div>
-                                            <div class="result-item">
-                                                <div class="result-value">30%</div>
-                                                <div class="result-label">Churn Reduction</div>
-                                            </div>
-                                            <div class="result-item">
-                                                <div class="result-value">450%</div>
-                                                <div class="result-label">ROI</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                   <!-- Case Study 1 -->
+<div class="case-study-item padd-15">
+    <div class="case-study-card shadow-dark">
+        <div class="case-header">
+            <div class="case-title-section">
+                <h3>Thuso Bank: Credit Risk Neural Network</h3>
+                <span class="case-badge dl">Deep Learning</span>
+            </div>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-exclamation-circle"></i></div>
+                <div class="section-content">
+                    <h4>Problem Statement</h4>
+                    <p>Thuso Bank needed a defensible loan-default model - one that could withstand South Africa's National Credit Act requirement that lenders justify credit declines, and POPIA's restrictions on automated decisions. The starting point was deliberately broken production code, a realistic scenario for this kind of debugging work.</p>
+                </div>
+            </div>
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-search"></i></div>
+                <div class="section-content">
+                    <h4>Diagnosis</h4>
+                    <ul class="case-list">
+                        <li>Identifier leakage - a customer ID column was being fed into the model as a feature</li>
+                        <li>Ordinal encoding applied to nominal (unordered) categories</li>
+                        <li>Wrong loss function / output activation for the classification task</li>
+                        <li>No regularisation and no class-imbalance handling on an ~11% default rate</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-cogs"></i></div>
+                <div class="section-content">
+                    <h4>Fix & Explainability</h4>
+                    <p>Rebuilt the pipeline with correct encoding, loss function, and regularisation, then added SHAP for per-applicant explainability - directly addressing the NCA requirement to justify an adverse credit decision.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">Python</span>
+                            <button class="code-copy" title="Copy code"><i class="fa fa-copy"></i></button>
                         </div>
-                    </div>
-                    
-                    <!-- Case Study 2 -->
-                    <div class="case-study-item padd-15">
-                        <div class="case-study-card shadow-dark">
-                            <div class="case-header">
-                                <div class="case-title-section">
-                                    <h3>Real-Time Fraud Detection System</h3>
-                                    <span class="case-badge dl">Deep Learning</span>
-                                </div>
-                            </div>
-                            
-                            <div class="case-body">
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-exclamation-circle"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Problem Statement</h4>
-                                        <p>Financial institution processing 1M+ daily transactions needed real-time fraud detection with <100ms latency to prevent $5M annual losses.</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-search"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Data Exploration</h4>
-                                        <ul class="case-list">
-                                            <li>Processed 50M historical transactions</li>
-                                            <li>Extreme class imbalance: 0.1% fraud rate</li>
-                                            <li>Engineered 45 features from transaction patterns</li>
-                                            <li>Implemented streaming data pipeline with Apache Kafka</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-cogs"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Model Selection & Implementation</h4>
-                                        <p>Deployed ensemble of Isolation Forest for anomaly detection + LSTM neural network for sequence analysis. Achieved 94% precision with 88% recall.</p>
-                                        <div class="code-block">
-                                            <div class="code-header">
-                                                <span class="code-lang">Python</span>
-                                                <button class="code-copy" title="Copy code"><i class="fa fa-copy"></i></button>
-                                            </div>
-                                            <pre><code># Ensemble Model
-from sklearn.ensemble import IsolationForest
-from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import LSTM, Dense
+                        <pre><code>import shap
 
-# Anomaly Detection
-iso_forest = IsolationForest(contamination=0.001)
-anomaly_scores = iso_forest.fit_predict(X_train)
+explainer = shap.Explainer(model, X_train)
+shap_values = explainer(X_test)
 
-# LSTM for Sequence Analysis
-model = Sequential([
-    LSTM(128, return_sequences=True),
-    LSTM(64),
-    Dense(1, activation='sigmoid')
-])</code></pre>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <div class="case-section">
-                                    <div class="section-icon">
-                                        <i class="fa fa-chart-bar"></i>
-                                    </div>
-                                    <div class="section-content">
-                                        <h4>Results & Impact</h4>
-                                        <div class="results-grid">
-                                            <div class="result-item">
-                                                <div class="result-value">94%</div>
-                                                <div class="result-label">Precision</div>
-                                            </div>
-                                            <div class="result-item">
-                                                <div class="result-value">$4.2M</div>
-                                                <div class="result-label">Prevented</div>
-                                            </div>
-                                            <div class="result-item">
-                                                <div class="result-value">45ms</div>
-                                                <div class="result-label">Latency</div>
-                                            </div>
-                                            <div class="result-item">
-                                                <div class="result-value">99.9%</div>
-                                                <div class="result-label">Uptime</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+# Per-applicant explanation for an adverse decision
+shap.plots.waterfall(shap_values[applicant_idx])</code></pre>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-chart-bar"></i></div>
+                <div class="section-content">
+                    <h4>Results & Impact</h4>
+                    <div class="results-grid">
+                        <div class="result-item"><div class="result-value">0.774</div><div class="result-label">ROC-AUC</div></div>
+                        <div class="result-item"><div class="result-value">0.61</div><div class="result-label">Default Recall</div></div>
+                        <div class="result-item"><div class="result-value">0.302</div><div class="result-label">Avg Precision</div></div>
+                        <div class="result-item"><div class="result-value">vs 0.107</div><div class="result-label">Random Baseline</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+                    
+                    <!-- Case Study 2 -->
+<div class="case-study-item padd-15">
+    <div class="case-study-card shadow-dark">
+        <div class="case-header">
+            <div class="case-title-section">
+                <h3>British Airways: Booking Prediction</h3>
+                <span class="case-badge ml">Machine Learning</span>
+            </div>
+        </div>
+        <div class="case-body">
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-exclamation-circle"></i></div>
+                <div class="section-content">
+                    <h4>Problem Statement</h4>
+                    <p>By the time a passenger reaches the airport, the booking decision was made weeks earlier. BA needed a model that flags likely bookers early enough to actually influence the decision, on 50,000 historical bookings with an 85/15 class imbalance.</p>
+                </div>
+            </div>
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-search"></i></div>
+                <div class="section-content">
+                    <h4>The Accuracy Trap</h4>
+                    <ul class="case-list">
+                        <li>A baseline Random Forest hit 85.3% accuracy - but only caught 10.5% of actual bookers</li>
+                        <li>That "accurate" baseline produced a net campaign loss of -£80,510</li>
+                        <li>Class-weighting alone didn't fix it; balanced bootstrap sampling did</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-cogs"></i></div>
+                <div class="section-content">
+                    <h4>Model Selection & Cost-Benefit Analysis</h4>
+                    <p>Tested baseline RF, class-weighted RF, balanced-bootstrap RF, and SMOTE RF, then converted each confusion matrix into net campaign value using real revenue/cost assumptions.</p>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span class="code-lang">Python</span>
+                            <button class="code-copy" title="Copy code"><i class="fa fa-copy"></i></button>
+                        </div>
+                        <pre><code>from imblearn.ensemble import BalancedRandomForestClassifier
+
+model = BalancedRandomForestClassifier(n_estimators=200, random_state=42)
+model.fit(X_train, y_train)
+
+# Net campaign value from the confusion matrix
+net_value = (tp * avg_revenue * conversion_uplift) - (contacted * campaign_cost)</code></pre>
+                    </div>
+                </div>
+            </div>
+            <div class="case-section">
+                <div class="section-icon"><i class="fa fa-chart-bar"></i></div>
+                <div class="section-content">
+                    <h4>Results & Impact</h4>
+                    <div class="results-grid">
+                        <div class="result-item"><div class="result-value">0.64</div><div class="result-label">Recall</div></div>
+                        <div class="result-item"><div class="result-value">+£21,435</div><div class="result-label">Net Value</div></div>
+                        <div class="result-item"><div class="result-value">0.788</div><div class="result-label">ROC-AUC</div></div>
+                        <div class="result-item"><div class="result-value">6x</div><div class="result-label">vs Baseline Recall</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         <!--Case Studies Section End-->
         <div class="section-divider"><div class="divider-line"></div><span class="divider-icon"><i class="fas fa-chevron-down"></i></span><div class="divider-line"></div><span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span><span class="spark s5"></span><span class="spark s6"></span></div>
         <!--Research Section Start-->
