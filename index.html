@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" >
 <head>
 <meta charset="UTF-8" >
 <meta http-equiv="X-UA-Compatible" content="IE=edge" >
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Gopolang Mmutlwane - Data Scientist & Machine Learning Engineer Portfolio">
-<title>Gopolang Mmutlwane - Data Scientist & Machine Learning Engineer</title>
+<meta name="description" content="Gopolang Mmutlwane | Data Scientist & Machine Learning Engineer Portfolio">
+<title>Gopolang Mmutlwane | Data Scientist & Machine Learning Engineer</title>
 <!--CSS Files-->
 <link rel="stylesheet" href="frontend/assets/css/style.css">
 <link rel="stylesheet" href="frontend/assets/css/home-section.css">
@@ -428,7 +428,7 @@
                             <div class="card-details">
                                 <h4>Education</h4>
                                 <h3>BSc Mathematical Science</h3>
-                                <p>Mathematics & Computer Science - UJ</p>
+                                <p>Mathematics & Computer Science, UJ</p>
                                 <span class="year-badge">2019 - 2025</span>
                             </div>
                         </div>
@@ -888,7 +888,7 @@
                 <div class="section-icon"><i class="fa fa-exclamation-circle"></i></div>
                 <div class="section-content">
                     <h4>Problem Statement</h4>
-                    <p>Thuso Bank needed a defensible loan-default model - one that could withstand South Africa's National Credit Act requirement that lenders justify credit declines, and POPIA's restrictions on automated decisions. The starting point was deliberately broken production code, a realistic scenario for this kind of debugging work.</p>
+                    <p>Thuso Bank needed a loan-default model that could withstand scrutiny under South Africa's National Credit Act requirement that lenders justify credit declines, and POPIA's restrictions on automated decisions. The starting point was deliberately broken production code, a realistic scenario for this kind of debugging work.</p>
                 </div>
             </div>
             <div class="case-section">
@@ -896,7 +896,7 @@
                 <div class="section-content">
                     <h4>Diagnosis</h4>
                     <ul class="case-list">
-                        <li>Identifier leakage - a customer ID column was being fed into the model as a feature</li>
+                        <li>Identifier leakage: a customer ID column was being fed into the model as a feature</li>
                         <li>Ordinal encoding applied to nominal (unordered) categories</li>
                         <li>Wrong loss function / output activation for the classification task</li>
                         <li>No regularisation and no class-imbalance handling on an ~11% default rate</li>
@@ -907,7 +907,7 @@
                 <div class="section-icon"><i class="fa fa-cogs"></i></div>
                 <div class="section-content">
                     <h4>Fix & Explainability</h4>
-                    <p>Rebuilt the pipeline with correct encoding, loss function, and regularisation, then added SHAP for per-applicant explainability - directly addressing the NCA requirement to justify an adverse credit decision.</p>
+                    <p>Rebuilt the pipeline with correct encoding, loss function, and regularisation, then added SHAP for per-applicant explainability, directly addressing the NCA requirement to justify an adverse credit decision.</p>
                     <div class="code-block">
                         <div class="code-header">
                             <span class="code-lang">Python</span>
@@ -961,7 +961,7 @@ shap.plots.waterfall(shap_values[applicant_idx])</code></pre>
                 <div class="section-content">
                     <h4>The Accuracy Trap</h4>
                     <ul class="case-list">
-                        <li>A baseline Random Forest hit 85.3% accuracy - but only caught 10.5% of actual bookers</li>
+                        <li>A baseline Random Forest hit 85.3% accuracy but only caught 10.5% of actual bookers</li>
                         <li>That "accurate" baseline produced a net campaign loss of -£80,510</li>
                         <li>Class-weighting alone didn't fix it; balanced bootstrap sampling did</li>
                     </ul>
@@ -1017,7 +1017,7 @@ net_value = (tp * avg_revenue * conversion_uplift) - (contacted * campaign_cost)
                 <div class="section-icon"><i class="fa fa-exclamation-circle"></i></div>
                 <div class="section-content">
                     <h4>Problem Statement</h4>
-                    <p>Hospital readmission within 30 days is a recognised indicator of care quality and cost. This analysis works through 101,766 encounters for diabetic patients across 130 US hospitals (1999-2008) to find what relates to early readmission - then turns a critical eye on the analysis itself.</p>
+                    <p>Hospital readmission within 30 days is a recognised indicator of care quality and cost. This analysis works through 101,766 encounters for diabetic patients across 130 US hospitals (1999-2008) to find what relates to early readmission, then turns a critical eye on the analysis itself.</p>
                 </div>
             </div>
             <div class="case-section">
@@ -1026,8 +1026,8 @@ net_value = (tp * avg_revenue * conversion_uplift) - (contacted * campaign_cost)
                     <h4>Key Findings</h4>
                     <ul class="case-list">
                         <li>Early readmission (&lt;30 days) affects 11.2% of encounters (11,357 of 101,766)</li>
-                        <li>First-time patients readmit far less than repeat patients - 4.0% vs an overall 8.8% rate</li>
-                        <li>Medical specialty is missing in 49.1% of records - flagged explicitly rather than silently dropped</li>
+                        <li>First-time patients readmit far less than repeat patients: a 4.0% rate versus an overall 8.8%</li>
+                        <li>Medical specialty is missing in 49.1% of records, which is flagged explicitly rather than silently dropped</li>
                     </ul>
                 </div>
             </div>
