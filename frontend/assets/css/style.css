@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
     --bg-black-900:#0f172a;
@@ -1290,6 +1290,26 @@ background-color: var(--skin-color);
     margin-bottom: 15px;
 }
 
+
+.btn-small {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 20px;
+    color: white;
+    border-radius: 30px;
+    display: inline-block;
+    white-space: nowrap;
+    border: none;
+    background: linear-gradient(135deg, var(--skin-color), var(--accent-color));
+    transition: all 0.3s ease;
+    letter-spacing: 0.3px;
+}
+
+.btn-small:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
 .btn-sm {
     padding: 6px 16px;
     font-size: 14px;
