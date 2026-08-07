@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital@1&family=JetBrains+Mono:wght@400;500&display=swap');
 
 :root{
-    --bg-black-900:#0f172a;
-    --bg-black-100:#1e293b;
-    --bg-black-50:#334155;
-    --text-black-900:#f1f5f9;
-    --text-black-700:#cbd5e1;
-    --skin-color:#3b82f6;
-    --accent-color:#10b981;
+    --bg-black-900:#FDFDFC;
+    --bg-black-100:#F7F7F5;
+    --bg-black-50:#E7E7E4;
+    --text-black-900:#17181A;
+    --text-black-700:#55575E;
+    --skin-color:#2451C4;
+    --accent-color:#2451C4;
     --warning-color:#f59e0b;
     --danger-color:#ef4444;
 }
@@ -15,7 +15,7 @@
 body{
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--bg-black-900);
     margin: 0;
 }
@@ -27,7 +27,7 @@ body{
 
 /* Enhanced headings with technical feel */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
     color: var(--text-black-900);
 }
