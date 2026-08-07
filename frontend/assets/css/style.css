@@ -1,32 +1,21 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{
-    --bg-black-900:#F4EFD9;
-    --bg-black-100:#FFFFFF;
-    --bg-black-50:#E3DCC4;
-    --text-black-900:#2A2A28;
-    --text-black-700:#5C5850;
-    --skin-color:#2451C4;
-    --accent-color:#2451C4;
+    --bg-black-900:#0f172a;
+    --bg-black-100:#1e293b;
+    --bg-black-50:#334155;
+    --text-black-900:#f1f5f9;
+    --text-black-700:#cbd5e1;
+    --skin-color:#3b82f6;
+    --accent-color:#10b981;
     --warning-color:#f59e0b;
     --danger-color:#ef4444;
-    --bg:#FFFFFF;
-    --cream:#F4EFD9;
-    --ink:#211E17;
-    --ink-dim:#5B564A;
-    --ink-faint:#8C8674;
-    --border-new:#E4DCC4;
-    --border-hi:#D2C8A8;
-    --navy:#1C3D5A;
-    --navy-dim:#1C3D5A12;
-    --sage:#5F7A5E;
-    --radius-new:6px;
 }
 
 body{
     line-height: 1.5;
     font-size: 16px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: var(--bg-black-900);
     margin: 0;
 }
@@ -38,7 +27,7 @@ body{
 
 /* Enhanced headings with technical feel */
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: var(--text-black-900);
 }
