@@ -75,6 +75,7 @@ ul{
 }
 
 .main-content{
+    overflow-x: hidden;
     margin-left: 270px;
     overflow-y: auto;
     height: 100vh;
