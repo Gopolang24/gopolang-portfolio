@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    RESEARCH SECTION - ACADEMIC & ACHIEVEMENTS
    ============================================ */
 
@@ -96,6 +96,7 @@
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+    margin-bottom: 16px;
 }
 
 .research-tags span {
